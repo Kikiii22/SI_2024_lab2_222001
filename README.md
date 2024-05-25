@@ -88,41 +88,49 @@ assertFalse(SILab2.checkCart(lista22, 0));
 2.unit tests за MULTIPLE CONDITION критериумите -функција TestForMultipleCondition()
 
 Прв тест случај:
+
 // FXX
 Item m = new Item("kika", "222", 100, 0);
 List<Item> list = new ArrayList<>();
 list.add(m);
 assertTrue(SILab2.checkCart(list, 500));
+
 Влезни параметри: item = { "kika", "222", 100, 0 }, payment = 500
 Услови: item.getPrice() > 300 (False), item.getDiscount() > 0 (Не е важно), item.getBarcode().charAt(0) == '0' (Не е важно)
 Овој тест случај проверува кога првиот услов е False и не се исполнува и останатите проверки не се значајни.Во овој случај, целата функција  треба да врати true бидејќи сумата е помала од payment.
 
 Втор тест случај:
+
 // TTT
 Item s = new Item("kika1", "022201", 600, 0.1F);
 List<Item> lista = new ArrayList<>();
 lista.add(s);
 assertTrue(SILab2.checkCart(lista, 500));
+
 Влезни параметри: item = { "kika1", "022201", 600, 0.1 }, payment = 500
 Услови: item.getPrice() > 300 (Tочно), item.getDiscount() > 0 (Точно), item.getBarcode().charAt(0) == '0' (Точно)
 Овој тест случај проверува кога сите услови се True. Во овој случај, методот треба да врати true бидејќи сумата е помала од payment.
 
 Трет тест случај:
+
 // TFX
 Item ss = new Item("kika2", "222201", 800, 0);
 List<Item> lista1 = new ArrayList<>();
 lista1.add(ss);
 assertFalse(SILab2.checkCart(lista1, 700));
+
 Влезни параметри: item = { "kika2", "222201", 800, 0 }, payment = 700
 Услови: item.getPrice() > 300 (Точно), item.getDiscount() > 0 (Неточно), item.getBarcode().charAt(0) == '0' (Не е важно)
 Овој тест случај проверува кога првиот услов е True, вториот услов е False, без разлика на третиот услов. Во овој случај, методот треба да врати false бидејќи сумата е помала од payment.
 
 Четврт тест случај:
+
 // TTF
 Item ss2 = new Item("kika3", "322201", 500, 0.4F);
 List<Item> lista2 = new ArrayList<>();
 lista2.add(ss2);
 assertFalse(SILab2.checkCart(lista2, 30));
+
 Влезни параметри: item = { "kika3", "322201", 500, 0.4 }, payment = 30
 Услови: item.getPrice() > 300 (Точно), item.getDiscount() > 0 (Точно), item.getBarcode().charAt(0) == '0' (Неточно)
 Овој тест случај проверува кога првите два услови се True, а третиот услов е False. Во овој случај, методот треба да врати false бидејќи сумата е помала од payment.
