@@ -19,35 +19,44 @@ CONTROL FLOW GRAPH
 ![image](https://github.com/Kikiii22/SI_2024_lab2_222001/assets/116901976/b4d27b39-528f-49f4-bb89-cf34b72d2ed0)
 
 Објаснување на напишаните unit tests
+
 1.unit tests за EVERY BRANCH критериумите -функција TestForEveryBranch()
+
 Прв тест случај:
+
 Exception exception = assertThrows(RuntimeException.class, () -> SILab2.checkCart(null, 100));
 assertEquals("allItems list can't be null!",exception.getMessage());
+
 Влезни параметри: allItems = null, payment = 100
 Очекуван излез: Исклучок со порака "allItems list can't be null!"
 Овој тест случај проверува дали методот checkCart правилно фрла исклучок кога листата allItems е null.
 
 Втор тест случај:
+
 Item item11 = new Item("", null, 35, 0.5F);
 List<Item> lista = new ArrayList<>();
 lista.add(item11);
 Exception exceptionn = assertThrows(RuntimeException.class, () -> SILab2.checkCart(lista, 100));
 assertEquals("No barcode!",exceptionn.getMessage());
+
 Влезни параметри: allItems = {item11}, каде item11 = {null, null, 35, 0.5}, payment = 100
 Очекуван излез: Исклучок со порака "No barcode!"
 Овој тест случај проверува дали методот checkCart правилно фрла исклучок кога barcode на некој предмет е null.
 
 Трет тест случај:
+
 Item item1 = new Item("", "-1511", 22, 0.5F);
 List<Item> lista1 = new ArrayList<>();
 lista1.add(item1);
 Exception exception1 = assertThrows(RuntimeException.class, () -> SILab2.checkCart(lista1, 100));
 assertEquals("Invalid character in item barcode!",exception1.getMessage());
+
 Влезни параметри: allItems = {item1}, каде item1 = {"", "-1511", 22, 0.5}, payment = 100
 Очекуван излез: Исклучок со порака "Invalid character in item barcode!"
 Овој тест случај проверува дали методот checkCart правилно фрла исклучок кога barcode на некој предмет содржи невалиден карактер (во овој случај -).
 
 Четврт тест случај:
+
 Item item = new Item("tina", "1111", 34, 0.2F);
 Item item2 = new Item("mina", "0211", 301, 0.1F);
 Item item3 = new Item("kika", "22211", 22, 0);
@@ -56,11 +65,13 @@ lista11.add(item);
 lista11.add(item2);
 lista11.add(item3);
 assertTrue(SILab2.checkCart(lista11, 550));
+
 Влезни параметри: allItems = {item, item2, item3}, каде item = {"tina", "1111", 34, 0.2}, item2 = {"mina", "0211", 301, 0.1}, item3 = {"kika", "22211", 22, 0}, payment = 550
 Очекуван излез: true
 Овој тест случај проверува дали методот checkCart враќа true кога вкупната цена на предметите е помала или еднаква на payment.
 
 Петти тест случај:
+
 Item item111 = new Item("tina", "1111", 34, 0.2F);
 Item item222 = new Item("mina", "0211", 301, 0.1F);
 Item item333 = new Item("kika", "22211", 22, 0);
@@ -69,6 +80,7 @@ lista22.add(item111);
 lista22.add(item222);
 lista22.add(item333);
 assertFalse(SILab2.checkCart(lista22, 0));
+
 Влезни параметри: allItems = {item111, item222, item333}, каде item111 = {"tina", "1111", 34, 0.2}, item222 = {"mina", "0211", 301, 0.1}, item333 = {"kika", "22211", 22, 0}, payment = 0
 Очекуван излез: false
 Овој тест случај проверува дали методот checkCart враќа false кога вкупната цена е поголема од payment.
