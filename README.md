@@ -7,7 +7,8 @@ CONTROL FLOW GRAPH
 Цикломатската комплексност на овој код е 2, истата ја добив преку формулата P+1, каде што P е бројот на предикатни јазли. Во случајoв P=9, па цикломатската комплексност изнесува 10.Направив и втора проверка каде број на ребра е 36,јазли 28,па комплексноста е 36-28+2=10
 
 EVERY BRANCH
-![image](https://github.com/Kikiii22/SI_2024_lab2_222001/assets/116901976/0147d369-5933-4066-ba41-82a0ed7f119d)
+![image](https://github.com/Kikiii22/SI_2024_lab2_222001/assets/116901976/2dc127e1-5b48-41f0-bf17-bcbc0ebce6e8)
 
 MULTIPLE CONDITION
-![image](https://github.com/Kikiii22/SI_2024_lab2_222001/assets/116901976/81b67686-fb11-4dd5-9af7-036845e41003)
+![image](https://github.com/Kikiii22/SI_2024_lab2_222001/assets/116901976/b4d27b39-528f-49f4-bb89-cf34b72d2ed0)
+
